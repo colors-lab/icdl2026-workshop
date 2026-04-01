@@ -19,11 +19,9 @@
       --text-mid:   #444;
       --text-light: #777;
       --border:     #ddd8cc;
-      --rule:       #c8913a;
     }
 
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
     html { scroll-behavior: smooth; }
 
     body {
@@ -31,10 +29,10 @@
       color: var(--text);
       font-family: 'Source Sans 3', sans-serif;
       font-size: 17px;
-      line-height: 1.75;
+      line-height: 1.78;
     }
 
-    /* ── NAV ── */
+    /* NAV */
     nav {
       position: sticky;
       top: 0;
@@ -43,31 +41,31 @@
       border-bottom: 3px solid var(--accent);
     }
     nav ul {
-      max-width: 1080px;
+      max-width: 1100px;
       margin: 0 auto;
       display: flex;
-      gap: 0;
+      flex-wrap: wrap;
       list-style: none;
-      padding: 0 2rem;
+      padding: 0 1.5rem;
     }
     nav ul li a {
       display: block;
-      padding: 0.9rem 1.3rem;
+      padding: 0.85rem 1.1rem;
       color: #ccd6f6;
       text-decoration: none;
-      font-size: 0.85rem;
+      font-size: 0.79rem;
       letter-spacing: 0.07em;
       text-transform: uppercase;
       font-weight: 600;
       transition: color 0.2s, background 0.2s;
     }
-    nav ul li a:hover { color: var(--accent-lt); background: rgba(255,255,255,0.05); }
+    nav ul li a:hover { color: var(--accent-lt); background: rgba(255,255,255,0.06); }
 
-    /* ── HERO ── */
+    /* HERO */
     header {
-      background: linear-gradient(160deg, var(--navy) 0%, var(--navy-mid) 60%, #1e3a5f 100%);
+      background: linear-gradient(155deg, var(--navy) 0%, var(--navy-mid) 55%, #1e3a5f 100%);
       color: #fff;
-      padding: 5rem 2rem 4rem;
+      padding: 5.5rem 2rem 4.5rem;
       position: relative;
       overflow: hidden;
     }
@@ -76,120 +74,94 @@
       position: absolute;
       inset: 0;
       background-image:
-        radial-gradient(circle at 80% 20%, rgba(200,145,58,0.12) 0%, transparent 50%),
-        radial-gradient(circle at 10% 80%, rgba(200,145,58,0.07) 0%, transparent 40%);
+        radial-gradient(circle at 78% 18%, rgba(200,145,58,0.13) 0%, transparent 50%),
+        radial-gradient(circle at 12% 82%, rgba(200,145,58,0.08) 0%, transparent 40%);
     }
-    .hero-inner {
-      max-width: 820px;
-      margin: 0 auto;
-      position: relative;
-    }
+    .hero-inner { max-width: 860px; margin: 0 auto; position: relative; }
     .conference-tag {
       display: inline-block;
       border: 1.5px solid var(--accent);
       color: var(--accent-lt);
-      font-family: 'Source Sans 3', sans-serif;
-      font-size: 0.78rem;
-      letter-spacing: 0.12em;
+      font-size: 0.76rem;
+      letter-spacing: 0.14em;
       text-transform: uppercase;
       padding: 0.3rem 0.9rem;
       border-radius: 2px;
       margin-bottom: 1.6rem;
-      font-weight: 600;
+      font-weight: 700;
     }
     header h1 {
       font-family: 'Libre Baskerville', Georgia, serif;
-      font-size: clamp(1.9rem, 4vw, 2.8rem);
+      font-size: clamp(1.85rem, 4vw, 2.9rem);
       font-weight: 700;
-      line-height: 1.25;
+      line-height: 1.22;
       margin-bottom: 1rem;
     }
-    header h2 {
+    header .subtitle {
       font-family: 'Libre Baskerville', Georgia, serif;
-      font-size: clamp(1rem, 2vw, 1.25rem);
+      font-size: clamp(0.98rem, 2vw, 1.18rem);
       font-weight: 400;
       font-style: italic;
       color: #a8c0e8;
       margin-bottom: 2rem;
-      line-height: 1.5;
+      line-height: 1.55;
     }
-    .meta-row {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 1.5rem;
-    }
-    .meta-item {
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
-      font-size: 0.9rem;
-      color: #ccd6f6;
-    }
+    .meta-row { display: flex; flex-wrap: wrap; gap: 1.4rem; }
+    .meta-item { display: flex; align-items: center; gap: 0.5rem; font-size: 0.88rem; color: #ccd6f6; }
     .meta-item svg { color: var(--accent-lt); flex-shrink: 0; }
 
-    /* ── SECTIONS ── */
-    section {
-      padding: 4.5rem 2rem;
-    }
-    .inner {
-      max-width: 860px;
-      margin: 0 auto;
-    }
+    /* LAYOUT */
+    section { padding: 4.5rem 2rem; }
+    section.alt { background: #f0eee8; }
+    .inner { max-width: 900px; margin: 0 auto; }
     .section-label {
-      font-size: 0.75rem;
-      letter-spacing: 0.14em;
+      font-size: 0.73rem;
+      letter-spacing: 0.15em;
       text-transform: uppercase;
       color: var(--accent);
       font-weight: 700;
-      margin-bottom: 0.5rem;
+      margin-bottom: 0.45rem;
     }
     h2.section-title {
       font-family: 'Libre Baskerville', Georgia, serif;
-      font-size: clamp(1.4rem, 3vw, 2rem);
+      font-size: clamp(1.4rem, 3vw, 1.95rem);
       color: var(--navy);
-      margin-bottom: 1rem;
-      padding-bottom: 0.75rem;
+      margin-bottom: 1.2rem;
+      padding-bottom: 0.7rem;
       border-bottom: 2px solid var(--border);
     }
-    .lead {
-      font-size: 1.05rem;
-      color: var(--text-mid);
-      margin-bottom: 1.5rem;
-    }
     p { margin-bottom: 1rem; color: var(--text-mid); }
+    p:last-child { margin-bottom: 0; }
 
-    /* alternating section bg */
-    section.alt { background: #f0eee8; }
-
-    /* ── LIMITATIONS GRID ── */
+    /* LIMITATION CARDS */
     .limitation-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-      gap: 1.2rem;
-      margin-top: 2rem;
+      grid-template-columns: repeat(auto-fill, minmax(195px, 1fr));
+      gap: 1.1rem;
+      margin-top: 2.2rem;
     }
     .lim-card {
       background: var(--bg-card);
       border: 1px solid var(--border);
       border-top: 3px solid var(--accent);
-      padding: 1.4rem;
+      padding: 1.3rem;
       border-radius: 3px;
     }
     .lim-card h4 {
       font-family: 'Libre Baskerville', serif;
       font-size: 0.95rem;
       color: var(--navy);
-      margin-bottom: 0.4rem;
+      margin-bottom: 0.45rem;
     }
-    .lim-card p { font-size: 0.88rem; margin: 0; line-height: 1.55; }
+    .lim-card p { font-size: 0.87rem; margin: 0; line-height: 1.6; }
 
-    /* ── DISCUSSION TOPICS ── */
+    /* TOPIC LIST */
     .topic-list {
       list-style: none;
       margin-top: 1.5rem;
       display: flex;
       flex-direction: column;
-      gap: 0.8rem;
+      gap: 0.75rem;
     }
     .topic-list li {
       display: flex;
@@ -200,7 +172,7 @@
       border-left: 4px solid var(--accent);
       padding: 1rem 1.2rem;
       border-radius: 3px;
-      font-size: 0.95rem;
+      font-size: 0.94rem;
       color: var(--text-mid);
       line-height: 1.6;
     }
@@ -208,112 +180,128 @@
       font-family: 'Libre Baskerville', serif;
       color: var(--accent);
       font-weight: 700;
-      font-size: 1.05rem;
+      font-size: 1rem;
       flex-shrink: 0;
       min-width: 1.6rem;
     }
 
-    /* ── PEOPLE ── */
-    .people-group-title {
-      font-family: 'Libre Baskerville', serif;
-      font-size: 1rem;
-      color: var(--navy-mid);
-      text-transform: uppercase;
-      letter-spacing: 0.06em;
-      margin: 2rem 0 1rem;
-      padding-bottom: 0.4rem;
-      border-bottom: 1px solid var(--border);
-    }
+    /* PEOPLE GRID */
     .people-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
-      gap: 1rem;
+      grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+      gap: 1.5rem;
+      margin-top: 1.2rem;
     }
     .person-card {
       background: var(--bg-card);
       border: 1px solid var(--border);
-      padding: 1.2rem 1.4rem;
-      border-radius: 3px;
+      border-radius: 4px;
+      padding: 1.5rem 1rem 1.2rem;
+      text-align: center;
       transition: box-shadow 0.2s, border-color 0.2s;
     }
     .person-card:hover {
-      box-shadow: 0 4px 18px rgba(26,39,68,0.1);
+      box-shadow: 0 4px 20px rgba(26,39,68,0.1);
       border-color: var(--accent);
+    }
+
+    /* PHOTO SLOT */
+    .photo-slot {
+      width: 90px;
+      height: 90px;
+      border-radius: 50%;
+      margin: 0 auto 1rem;
+      overflow: hidden;
+      border: 3px solid var(--border);
+      background: #e8e4dc;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .photo-slot img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+    .photo-slot .initials {
+      font-family: 'Libre Baskerville', serif;
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: var(--navy-mid);
+      opacity: 0.5;
+      user-select: none;
     }
     .person-name {
       font-family: 'Libre Baskerville', serif;
-      font-size: 0.98rem;
+      font-size: 0.92rem;
       font-weight: 700;
       color: var(--navy);
-      margin-bottom: 0.2rem;
+      margin-bottom: 0.25rem;
+      line-height: 1.3;
     }
     .person-affil {
-      font-size: 0.83rem;
+      font-size: 0.78rem;
       color: var(--text-light);
       line-height: 1.45;
+      margin-bottom: 0.4rem;
     }
     .person-email {
       display: inline-block;
-      margin-top: 0.5rem;
-      font-size: 0.78rem;
+      font-size: 0.74rem;
       color: var(--accent);
       text-decoration: none;
+      word-break: break-all;
     }
     .person-email:hover { text-decoration: underline; }
 
-    /* ── SCHEDULE ── */
+    /* SCHEDULE */
     .schedule-table {
       width: 100%;
       border-collapse: collapse;
-      margin-top: 1.5rem;
       font-size: 0.93rem;
+      margin-top: 0.5rem;
     }
     .schedule-table thead th {
       background: var(--navy);
       color: #fff;
       text-align: left;
       padding: 0.75rem 1rem;
-      font-family: 'Source Sans 3', sans-serif;
       font-weight: 600;
-      letter-spacing: 0.04em;
-      font-size: 0.82rem;
+      font-size: 0.8rem;
+      letter-spacing: 0.05em;
       text-transform: uppercase;
     }
-    .schedule-table tbody tr {
-      border-bottom: 1px solid var(--border);
-    }
-    .schedule-table tbody tr:nth-child(even) { background: #f8f5ef; }
-    .schedule-table tbody tr:hover { background: #f0ebe0; }
-    .schedule-table td {
-      padding: 0.85rem 1rem;
-      color: var(--text-mid);
-      vertical-align: top;
-    }
+    .schedule-table tbody tr { border-bottom: 1px solid var(--border); }
+    .schedule-table tbody tr:nth-child(even) { background: #f7f4ee; }
+    .schedule-table tbody tr:hover { background: #ede9e0; }
+    .schedule-table td { padding: 0.85rem 1rem; color: var(--text-mid); vertical-align: top; }
     .schedule-table td.time {
       font-family: 'Libre Baskerville', serif;
       font-variant-numeric: tabular-nums;
       color: var(--navy);
       font-weight: 700;
       white-space: nowrap;
-      width: 180px;
+      width: 175px;
     }
     .tag {
       display: inline-block;
-      background: var(--navy);
-      color: #ccd6f6;
-      font-size: 0.72rem;
-      letter-spacing: 0.07em;
+      font-size: 0.7rem;
+      letter-spacing: 0.06em;
       text-transform: uppercase;
-      padding: 0.15rem 0.55rem;
+      padding: 0.12rem 0.5rem;
       border-radius: 2px;
       margin-left: 0.4rem;
       vertical-align: middle;
+      font-weight: 600;
     }
-    .tag.break { background: #6b7fa3; }
-    .tag.invited { background: #2d5a27; }
-    .tag.contributed { background: #6b3a1f; }
+    .tag.welcome     { background: #1a2744; color: #ccd6f6; }
+    .tag.invited     { background: #2d5a27; color: #b8e6b0; }
+    .tag.contributed { background: #6b3a1f; color: #f5c9a8; }
+    .tag.break       { background: #6b7fa3; color: #e8f0ff; }
+    .tag.farewell    { background: #4a4a4a; color: #e0e0e0; }
 
-    /* ── CALL FOR CONTRIBUTIONS ── */
+    /* CALL FOR CONTRIBUTIONS */
     .cfc-box {
       background: var(--navy);
       color: #ccd6f6;
@@ -336,38 +324,18 @@
       color: #fff;
       margin-bottom: 1rem;
     }
-    .cfc-box p { color: #a8c0e8; margin-bottom: 0.75rem; }
+    .cfc-box p { color: #a8c0e8; margin-bottom: 0.75rem; font-size: 0.95rem; line-height: 1.7; }
+    .cfc-box p:last-child { margin-bottom: 0; }
     .cfc-box ul {
-      margin: 0.5rem 0 1rem 1.2rem;
+      margin: 0.75rem 0 1rem 1.2rem;
       color: #a8c0e8;
       font-size: 0.93rem;
-      line-height: 1.7;
+      line-height: 1.75;
     }
+    .cfc-box ul li { margin-bottom: 0.3rem; }
     .cfc-box strong { color: var(--accent-lt); }
 
-    /* ── AUDIENCE ── */
-    .audience-list {
-      list-style: none;
-      margin-top: 1.2rem;
-      display: flex;
-      flex-direction: column;
-      gap: 0.6rem;
-    }
-    .audience-list li {
-      display: flex;
-      gap: 0.8rem;
-      align-items: flex-start;
-      font-size: 0.95rem;
-      color: var(--text-mid);
-    }
-    .audience-list li::before {
-      content: '▸';
-      color: var(--accent);
-      flex-shrink: 0;
-      margin-top: 0.05rem;
-    }
-
-    /* ── FOOTER ── */
+    /* FOOTER */
     footer {
       background: var(--navy);
       color: #8899bb;
@@ -377,15 +345,17 @@
       border-top: 3px solid var(--accent);
     }
     footer strong { color: #ccd6f6; }
+    footer a { color: var(--accent-lt); text-decoration: none; }
+    footer a:hover { text-decoration: underline; }
 
-    /* ── RESPONSIVE ── */
-    @media (max-width: 640px) {
-      nav ul { flex-wrap: wrap; gap: 0; }
-      nav ul li a { padding: 0.7rem 0.9rem; font-size: 0.78rem; }
+    /* RESPONSIVE */
+    @media (max-width: 700px) {
+      nav ul li a { padding: 0.65rem 0.8rem; font-size: 0.73rem; }
       header { padding: 3.5rem 1.25rem 3rem; }
       section { padding: 3rem 1.25rem; }
+      .schedule-table td.time { width: auto; white-space: normal; }
+      .people-grid { grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)); }
       .cfc-box { padding: 1.8rem 1.5rem; }
-      .schedule-table td.time { width: auto; }
     }
   </style>
 </head>
@@ -394,193 +364,183 @@
 <!-- NAV -->
 <nav>
   <ul>
-    <li><a href="#overview">Overview</a></li>
-    <li><a href="#discussion">Topics</a></li>
-    <li><a href="#people">People</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="#challenges">Challenges</a></li>
+    <li><a href="#topics">Topics</a></li>
+    <li><a href="#speakers">Speakers</a></li>
     <li><a href="#schedule">Schedule</a></li>
     <li><a href="#contribute">Contribute</a></li>
+    <li><a href="#organizers">Organizers</a></li>
   </ul>
 </nav>
 
 <!-- HERO -->
 <header>
   <div class="hero-inner">
-    <div class="conference-tag">ICDL 2026 · Half-Day Workshop</div>
+    <div class="conference-tag">ICDL 2026 &middot; Half-Day Workshop</div>
     <h1>Neuro-Symbolic Robotics<br>in the Age of Foundational Models</h1>
-    <h2>Bridging neural perception and symbolic reasoning toward genuinely intelligent robotic systems</h2>
+    <p class="subtitle">Fusing neural perception with symbolic reasoning toward genuinely intelligent robotic systems</p>
     <div class="meta-row">
       <span class="meta-item">
-        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16"><path d="M8 3.5a.5.5 0 0 0-1 0V9a.5.5 0 0 0 .252.434l3.5 2a.5.5 0 0 0 .496-.868L8 8.71V3.5z"/><path d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16zm7-8A7 7 0 1 1 1 8a7 7 0 0 1 14 0z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" fill="currentColor" viewBox="0 0 16 16">
+          <path d="M8 3.5a.5.5 0 0 0-1 0V9a.5.5 0 0 0 .252.434l3.5 2a.5.5 0 0 0 .496-.868L8 8.71V3.5z"/>
+          <path d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16zm7-8A7 7 0 1 1 1 8a7 7 0 0 1 14 0z"/>
+        </svg>
         Half-Day Workshop
       </span>
       <span class="meta-item">
-        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16"><path d="M6 .5a.5.5 0 0 1 .5-.5h3a.5.5 0 0 1 0 1H9v1.07a7.001 7.001 0 0 1 3.274 12.474l.601.602a.5.5 0 0 1-.707.708l-.746-.746A6.97 6.97 0 0 1 8 16a6.97 6.97 0 0 1-3.422-.892l-.746.746a.5.5 0 0 1-.707-.708l.602-.602A7.001 7.001 0 0 1 7 2.07V1h-.5A.5.5 0 0 1 6 .5z"/></svg>
-        5 Invited Speakers
+        <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" fill="currentColor" viewBox="0 0 16 16">
+          <path d="M7 14s-1 0-1-1 1-4 5-4 5 3 5 4-1 1-1 1H7zm4-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/>
+          <path fill-rule="evenodd" d="M5.216 14A2.238 2.238 0 0 1 5 13c0-1.355.68-2.75 1.936-3.72A6.325 6.325 0 0 0 5 9c-4 0-5 3-5 4s1 1 1 1h4.216z"/>
+          <path d="M4.5 8a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5z"/>
+        </svg>
+        5 Invited Speakers &middot; 6 Organizers
       </span>
       <span class="meta-item">
-        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16"><path d="M7 14s-1 0-1-1 1-4 5-4 5 3 5 4-1 1-1 1H7zm4-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/><path fill-rule="evenodd" d="M5.216 14A2.238 2.238 0 0 1 5 13c0-1.355.68-2.75 1.936-3.72A6.325 6.325 0 0 0 5 9c-4 0-5 3-5 4s1 1 1 1h4.216z"/><path d="M4.5 8a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5z"/></svg>
-        6 Organizers
-      </span>
-      <span class="meta-item">
-        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16"><path d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm7.5-6.923c-.67.204-1.335.82-1.887 1.855A7.97 7.97 0 0 0 5.145 4H7.5V1.077zM4.09 4a9.267 9.267 0 0 1 .64-1.539 6.7 6.7 0 0 1 .597-.933A7.025 7.025 0 0 0 2.255 4H4.09zm-.582 3.5c.03-.877.138-1.718.312-2.5H1.674a6.958 6.958 0 0 0-.656 2.5h2.49zM4.847 5a12.5 12.5 0 0 0-.338 2.5H7.5V5H4.847zM8.5 5v2.5h2.99a12.495 12.495 0 0 0-.337-2.5H8.5zM4.51 8.5a12.5 12.5 0 0 0 .337 2.5H7.5V8.5H4.51zm3.99 0V11h2.653c.187-.765.306-1.608.338-2.5H8.5zM5.145 12c.138.386.295.744.468 1.068.552 1.035 1.218 1.65 1.887 1.855V12H5.145zm.182 2.472a6.696 6.696 0 0 1-.597-.933A9.268 9.268 0 0 1 4.09 12H2.255a7.024 7.024 0 0 0 3.072 2.472zM3.82 11a13.652 13.652 0 0 1-.312-2.5h-2.49c.062.89.291 1.733.656 2.5H3.82zm6.853 3.472A7.024 7.024 0 0 0 13.745 12H11.91a9.27 9.27 0 0 1-.64 1.539 6.688 6.688 0 0 1-.597.933zM8.5 12v2.923c.67-.204 1.335-.82 1.887-1.855.173-.324.33-.682.468-1.068H8.5zm3.68-1h2.146c.365-.767.594-1.61.656-2.5h-2.49a13.65 13.65 0 0 1-.312 2.5zm2.802-3.5a6.959 6.959 0 0 0-.656-2.5H12.18c.174.782.282 1.623.312 2.5h2.49zM11.27 2.461c.247.464.462.98.64 1.539h1.835a7.024 7.024 0 0 0-3.072-2.472c.218.284.418.598.597.933zM10.855 4a7.966 7.966 0 0 0-.468-1.068C9.835 1.897 9.17 1.282 8.5 1.077V4h2.355z"/></svg>
-        International · Multi-Continent
+        <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" fill="currentColor" viewBox="0 0 16 16">
+          <path d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm7.5-6.923c-.67.204-1.335.82-1.887 1.855A7.97 7.97 0 0 0 5.145 4H7.5V1.077zM4.09 4a9.267 9.267 0 0 1 .64-1.539 6.7 6.7 0 0 1 .597-.933A7.025 7.025 0 0 0 2.255 4H4.09zm-.582 3.5c.03-.877.138-1.718.312-2.5H1.674a6.958 6.958 0 0 0-.656 2.5h2.49zM4.847 5a12.5 12.5 0 0 0-.338 2.5H7.5V5H4.847zM8.5 5v2.5h2.99a12.495 12.495 0 0 0-.337-2.5H8.5zM4.51 8.5a12.5 12.5 0 0 0 .337 2.5H7.5V8.5H4.51zm3.99 0V11h2.653c.187-.765.306-1.608.338-2.5H8.5zM5.145 12c.138.386.295.744.468 1.068.552 1.035 1.218 1.65 1.887 1.855V12H5.145zm.182 2.472a6.696 6.696 0 0 1-.597-.933A9.268 9.268 0 0 1 4.09 12H2.255a7.024 7.024 0 0 0 3.072 2.472zM3.82 11a13.652 13.652 0 0 1-.312-2.5h-2.49c.062.89.291 1.733.656 2.5H3.82zm6.853 3.472A7.024 7.024 0 0 0 13.745 12H11.91a9.27 9.27 0 0 1-.64 1.539 6.688 6.688 0 0 1-.597.933zM8.5 12v2.923c.67-.204 1.335-.82 1.887-1.855.173-.324.33-.682.468-1.068H8.5zm3.68-1h2.146c.365-.767.594-1.61.656-2.5h-2.49a13.65 13.65 0 0 1-.312 2.5zm2.802-3.5a6.959 6.959 0 0 0-.656-2.5H12.18c.174.782.282 1.623.312 2.5h2.49z"/>
+        </svg>
+        International &middot; Multi-Continent
       </span>
     </div>
   </div>
 </header>
 
-<!-- OVERVIEW -->
-<section id="overview">
+<!-- ABOUT -->
+<section id="about">
   <div class="inner">
     <div class="section-label">About the Workshop</div>
     <h2 class="section-title">Overview &amp; Motivation</h2>
-    <p class="lead">
-      Over the past decade, deep learning has demonstrated remarkable effectiveness across many domains,
-      and robotics has likewise begun to embrace deep neural models for learning sophisticated perception
-      modules and control policies. Yet deploying such models in real robotic systems exposes several
-      persistent limitations.
-    </p>
-    <p>
-      Neural networks excel at pattern recognition but fall short at structured, logic-based reasoning.
-      The lack of transparent, human-interpretable mechanisms is a major concern when these models are
-      intended for safety-critical, real-world use. Knowledge learned by deep models is difficult to
-      disentangle and reuse across tasks; and because neural decision boundaries are opaque, predicting
-      failure cases remains hard.
-    </p>
-    <p>
-      In contrast, humans rely heavily on abstraction and symbolic reasoning — abilities that enable
-      generalization, high-level cognition, and the manipulation of conceptual structures.
-      <strong>Neuro-Symbolic AI</strong> has therefore emerged as a promising middle ground, fusing
-      the representational power of neural networks with the compositional and interpretable nature of
-      symbolic reasoning.
-    </p>
+    <p>Over the past decade, deep learning has demonstrated remarkable effectiveness across many domains, and robotics has likewise begun to embrace deep neural models for learning sophisticated perception modules and control policies. One of the primary strengths of deep learning in robotics is its capacity to model high-dimensional policy spaces directly from raw data. However, deploying such models in real robotic systems exposes several persistent limitations that restrict their use in safety-critical applications.</p>
+    <p>In contrast, humans rely heavily on abstraction and symbolic reasoning — abilities that enable generalization, high-level cognition, and the manipulation of conceptual structures. Symbolic AI addresses these capabilities by operating over discrete symbols and logical rules, yielding transparent reasoning and natural language-level interpretability. The bottleneck, however, lies in constructing suitable symbolic representations: we still lack reliable automated procedures for generating symbols and rules that meet the demands of a given task.</p>
+    <p>Neurosymbolic AI has emerged as a promising middle ground, fusing the representational power of neural networks with the compositional and interpretable nature of symbolic reasoning. Such hybrid architectures combine bottom-up perceptual strength with top-down logical inference. Interest has surged in recent years — Garcez and Lamb provide a broad survey of classical and modern approaches, and AAAI has introduced a dedicated focus track on neurosymbolic AI, reflecting the field's rapid growth.</p>
+    <p>Despite this momentum, neurosymbolic methods remain relatively unexplored within robotics. Yet robotics is uniquely positioned to benefit: robots process rich, continuous sensorimotor data streams while also needing to reason abstractly, plan ahead, and act safely over long horizons. A neurosymbolic robotics framework could unify low-level perception with high-level cognition, pushing the field toward genuinely intelligent systems. This workshop seeks to explore that potential and spark debate on the most promising paths forward.</p>
+  </div>
+</section>
 
+<!-- CHALLENGES -->
+<section id="challenges" class="alt">
+  <div class="inner">
+    <div class="section-label">Motivation</div>
+    <h2 class="section-title">Why Deep Learning Alone Falls Short</h2>
+    <p>Deploying deep neural models in real robotic systems consistently exposes four fundamental challenges:</p>
     <div class="limitation-grid">
       <div class="lim-card">
         <h4>Reasoning</h4>
-        <p>Neural networks excel at pattern recognition but struggle with structured, logic-based inference over discrete symbolic representations.</p>
+        <p>Neural networks excel at pattern recognition but struggle with structured, logic-based inference. Logical reasoning requires discrete, well-defined representations — whereas neural models operate in continuous vector spaces, making explicit reasoning extremely challenging.</p>
       </div>
       <div class="lim-card">
         <h4>Explainability</h4>
-        <p>Understanding why a deep model behaves a certain way remains difficult—a major concern for safety-critical deployments.</p>
+        <p>Understanding why a deep model behaves a certain way remains elusive. The absence of transparent, human-interpretable mechanisms is a critical concern for safety-critical, real-world robotic deployments.</p>
       </div>
       <div class="lim-card">
         <h4>Modularity</h4>
-        <p>Knowledge learned by deep models is hard to disentangle and systematically reapply across different tasks and contexts.</p>
+        <p>Knowledge encoded in deep models is hard to disentangle and transfer across tasks. While transfer learning offers partial relief, systematic reuse of learned competencies remains an open problem.</p>
       </div>
       <div class="lim-card">
         <h4>Robustness</h4>
-        <p>Deep models remain vulnerable to adversarial and naturally occurring perceptual distortions, with no general defenses available yet.</p>
+        <p>Opaque decision boundaries make it difficult to anticipate failures. Deep models remain vulnerable to adversarial perturbations and naturally occurring perceptual distortions, with no general defenses yet available.</p>
       </div>
     </div>
   </div>
 </section>
 
 <!-- DISCUSSION TOPICS -->
-<section id="discussion" class="alt">
+<section id="topics">
   <div class="inner">
     <div class="section-label">Research Agenda</div>
     <h2 class="section-title">Discussion Topics</h2>
-    <p>We will explicitly encourage speakers to engage with the following open questions, focusing on
-       current challenges and the bottlenecks that prevent scaling to human-level symbolic reasoning.</p>
+    <p>The workshop will structure discussion around the following open questions, spanning representation, grounding, integration, and temporal reasoning in neuro-symbolic robotics.</p>
     <ul class="topic-list">
       <li>
         <span class="topic-num">01</span>
-        <span>How are symbols represented in neural networks — distributed in subnetwork activations or encoded with single neurons?</span>
+        <span><strong>Symbolic knowledge representation:</strong> How are — or how should — symbols be represented within neural networks? Distributed across subnetwork activations, or localized to individual neurons?</span>
       </li>
       <li>
         <span class="topic-num">02</span>
-        <span>Should deep neural networks be designed to produce symbols and rules directly? What are the design principles, and is such engineering scalable?</span>
+        <span><strong>Designing networks to generate symbols and rules:</strong> What principles should guide this engineering effort, and can such approaches scale to real-world complexity?</span>
       </li>
       <li>
         <span class="topic-num">03</span>
-        <span>Should symbols emerge from robot–environment interactions (grounding), or should they be pre-designed and grounded via learning?</span>
+        <span><strong>Symbol grounding:</strong> Should symbols emerge organically from a robot's interactions with its environment, rather than being imposed top-down?</span>
       </li>
       <li>
         <span class="topic-num">04</span>
-        <span>How scalable is it to pre-design symbols and rules, and later learn the grounding via deep networks?</span>
+        <span>How scalable is it to pre-design symbols and rules, and subsequently learn their grounding through deep networks?</span>
       </li>
       <li>
         <span class="topic-num">05</span>
-        <span>How can multiple robotic cognitive capabilities — reasoning, planning, communication, and language — be integrated with perception and control?</span>
+        <span><strong>Integrating cognitive capabilities:</strong> How can reasoning, planning, communication, and language — which depend on symbolic manipulation — be unified with perception and control systems that operate on high-dimensional continuous data?</span>
       </li>
       <li>
         <span class="topic-num">06</span>
-        <span>How should symbolic representations of time be handled in long-horizon tasks, curriculum learning, or developmental robotic systems?</span>
+        <span><strong>Symbolic representations of time:</strong> How should temporal structure be handled in long-horizon tasks, curriculum learning pipelines, or developmental robotic systems?</span>
       </li>
     </ul>
   </div>
 </section>
 
-<!-- PEOPLE -->
-<section id="people">
+<!-- INVITED SPEAKERS -->
+<section id="speakers" class="alt">
   <div class="inner">
-    <div class="section-label">Participants</div>
-    <h2 class="section-title">Organizers &amp; Invited Speakers</h2>
-
-    <p class="people-group-title">Organizing Committee</p>
+    <div class="section-label">Invited Speakers &amp; Panelists</div>
+    <h2 class="section-title">Invited Speakers</h2>
+    <p>The following researchers have confirmed their participation as invited speakers and panelists.</p>
     <div class="people-grid">
+
       <div class="person-card">
-        <div class="person-name">Emre Ugur</div>
-        <div class="person-affil">Bogazici University, Turkey</div>
-        <a class="person-email" href="mailto:emreugur@gmail.com">emreugur@gmail.com</a>
+        <div class="photo-slot">
+          <img src="images/erhan-oztop.jpeg" alt="Erhan Oztop" />
+        </div>
+        <div class="person-name">Erhan Oztop</div>
+        <div class="person-affil">Osaka University, Japan</div>
+        <a class="person-email" href="mailto:erhan.oztop@ozyegin.edu.tr">erhan.oztop@ozyegin.edu.tr</a>
       </div>
+
       <div class="person-card">
-        <div class="person-name">Sara Bernardini</div>
-        <div class="person-affil">University of Oxford, UK</div>
-        <a class="person-email" href="mailto:sara.bernardini@cs.ox.ac.uk">sara.bernardini@cs.ox.ac.uk</a>
+        <div class="photo-slot">
+          <img src="images/tom-silver.jpg" alt="Tom Silver" />
+        </div>
+        <div class="person-name">Tom Silver</div>
+        <div class="person-affil">Princeton University, USA</div>
+        <a class="person-email" href="mailto:tsilver@princeton.edu">tsilver@princeton.edu</a>
       </div>
+
       <div class="person-card">
-        <div class="person-name">Riccardo Caccavale</div>
-        <div class="person-affil">University of Naples Federico II, Italy</div>
+        <div class="photo-slot">
+          <img src="images/Matthias-Scheutz.png" alt="Matthias Scheutz" />
+        </div>
+        <div class="person-name">Matthias Scheutz</div>
+        <div class="person-affil">Tufts University, USA</div>
+        <a class="person-email" href="mailto:matthias.scheutz@tufts.edu">matthias.scheutz@tufts.edu</a>
       </div>
+
       <div class="person-card">
+        <div class="photo-slot">
+          <img src="images/Finzi.jpg" alt="Alberto Finzi" />
+        </div>
+        <div class="person-name">Alberto Finzi</div>
+        <div class="person-affil">Universit&#224; di Napoli &ldquo;Federico II&rdquo;, Italy</div>
+      </div>
+
+      <div class="person-card">
+        <div class="photo-slot">
+          <img src="images/Fulvio-Mastrogiovanni.webp" alt="Fulvio Mastrogiovanni" />
+        </div>
         <div class="person-name">Fulvio Mastrogiovanni</div>
         <div class="person-affil">University of Genoa, Italy</div>
         <a class="person-email" href="mailto:fulvio.mastrogiovanni@unige.it">fulvio.mastrogiovanni@unige.it</a>
       </div>
-      <div class="person-card">
-        <div class="person-name">Yukie Nagai</div>
-        <div class="person-affil">University of Tokyo, Japan</div>
-      </div>
-      <div class="person-card">
-        <div class="person-name">Sao Mai Nguyen</div>
-        <div class="person-affil">ENSTA, IP Paris, France</div>
-      </div>
-    </div>
 
-    <p class="people-group-title">Invited Speakers &amp; Panelists <span style="font-weight:400;font-style:italic;font-size:0.85rem;color:var(--text-light)">(all confirmed)</span></p>
-    <div class="people-grid">
-      <div class="person-card">
-        <div class="person-name">Erhan Oztop</div>
-        <div class="person-affil">Osaka University, Japan</div>
-      </div>
-      <div class="person-card">
-        <div class="person-name">Tom Silver</div>
-        <div class="person-affil">Princeton University, USA</div>
-      </div>
-      <div class="person-card">
-        <div class="person-name">Matthias Scheutz</div>
-        <div class="person-affil">Tufts University, USA</div>
-      </div>
-      <div class="person-card">
-        <div class="person-name">Alberto Finzi</div>
-        <div class="person-affil">Università di Napoli "Federico II", Italy</div>
-      </div>
-      <div class="person-card">
-        <div class="person-name">Fulvio Mastrogiovanni</div>
-        <div class="person-affil">University of Genoa, Italy</div>
-      </div>
     </div>
   </div>
 </section>
 
 <!-- SCHEDULE -->
-<section id="schedule" class="alt">
+<section id="schedule">
   <div class="inner">
     <div class="section-label">Program</div>
-    <h2 class="section-title">Tentative Schedule</h2>
-    <p>Schedule is subject to revision based on conference organizing committee feedback.</p>
+    <h2 class="section-title">Schedule <span style="font-family:'Source Sans 3',sans-serif;font-size:0.82rem;font-weight:400;font-style:italic;color:var(--text-light);margin-left:0.5rem;">tentative</span></h2>
     <table class="schedule-table">
       <thead>
         <tr>
@@ -590,40 +550,40 @@
       </thead>
       <tbody>
         <tr>
-          <td class="time">08:30 – 08:45</td>
-          <td>Welcome Speech <span class="tag">Organizers</span></td>
+          <td class="time">08:30 &ndash; 08:45</td>
+          <td>Welcome speech by the organizing committee <span class="tag welcome">Welcome</span></td>
         </tr>
         <tr>
-          <td class="time">08:45 – 09:30</td>
-          <td>Invited Talk 1 <span class="tag invited">Invited</span></td>
+          <td class="time">08:45 &ndash; 09:30</td>
+          <td>Invited Speaker 1 <span class="tag invited">Invited</span></td>
         </tr>
         <tr>
-          <td class="time">09:30 – 10:15</td>
-          <td>Invited Talk 2 <span class="tag invited">Invited</span></td>
+          <td class="time">09:30 &ndash; 10:15</td>
+          <td>Invited Speaker 2 <span class="tag invited">Invited</span></td>
         </tr>
         <tr>
-          <td class="time">10:15 – 11:00</td>
-          <td>Invited Talk 3 <span class="tag invited">Invited</span></td>
+          <td class="time">10:15 &ndash; 11:00</td>
+          <td>Invited Speaker 3 <span class="tag invited">Invited</span></td>
         </tr>
         <tr>
-          <td class="time">11:00 – 11:15</td>
+          <td class="time">11:00 &ndash; 11:15</td>
           <td>Coffee Break &amp; Poster Session <span class="tag break">Break</span></td>
         </tr>
         <tr>
-          <td class="time">11:15 – 11:45</td>
-          <td>Invited Talk 4 <span class="tag invited">Invited</span></td>
+          <td class="time">11:15 &ndash; 11:45</td>
+          <td>Invited Speaker 4 <span class="tag invited">Invited</span></td>
         </tr>
         <tr>
-          <td class="time">11:45 – 12:00</td>
+          <td class="time">11:45 &ndash; 12:00</td>
           <td>Contributed Oral Talks <span class="tag contributed">Contributed</span></td>
         </tr>
         <tr>
-          <td class="time">12:00 – 12:45</td>
-          <td>Invited Talk 5 <span class="tag invited">Invited</span></td>
+          <td class="time">12:00 &ndash; 12:45</td>
+          <td>Invited Speaker 5 <span class="tag invited">Invited</span></td>
         </tr>
         <tr>
-          <td class="time">12:45 – 13:00</td>
-          <td>Farewell &amp; Closing Remarks</td>
+          <td class="time">12:45 &ndash; 13:00</td>
+          <td>Farewell &amp; Closing Remarks <span class="tag farewell">Closing</span></td>
         </tr>
       </tbody>
     </table>
@@ -631,13 +591,11 @@
 </section>
 
 <!-- CALL FOR CONTRIBUTIONS -->
-<section id="contribute">
+<section id="contribute" class="alt">
   <div class="inner">
     <div class="section-label">Call for Contributions</div>
     <h2 class="section-title">Submit Your Work</h2>
-
-    <p>We invite submissions from researchers working at the intersection of neural and symbolic approaches in robotics and AI. Accepted contributions will be presented as oral talks (5–15 minutes) and/or posters, depending on quality assessed by reviewers.</p>
-
+    <p>We invite submissions from researchers working at the intersection of neural and symbolic approaches in robotics and AI. Accepted contributions will be presented as oral talks (5&ndash;15 minutes) and/or posters, depending on quality assessed by reviewers.</p>
     <div class="cfc-box">
       <h3>Who Should Attend &amp; Submit?</h3>
       <p>We aim to draw a diverse, interdisciplinary audience. We strongly encourage submissions from <strong>underrepresented researchers and communities</strong>, and the review process will consider gender, race, ethnicity, and geographic balance.</p>
@@ -645,22 +603,83 @@
         <li>Cognitive and developmental roboticists working on symbol grounding and emergence</li>
         <li>Robotics researchers working on symbolic AI who wish to incorporate recent deep learning advances</li>
         <li>Robotics researchers working on deep learning who want to leverage symbolic reasoning and explainability</li>
-        <li>Researchers in vision and NLP working at the neural–symbolic intersection</li>
+        <li>Researchers in vision and NLP working at the neural&ndash;symbolic intersection</li>
       </ul>
-      <p>The organizing team spans multiple continents and institutions specifically to ensure diversity of reach — we welcome participants who do not traditionally attend ICDL.</p>
+      <p>The organizing team spans multiple continents and institutions specifically to ensure diversity of reach &mdash; we welcome participants who do not traditionally attend ICDL.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ORGANIZERS -->
+<section id="organizers">
+  <div class="inner">
+    <div class="section-label">Organization</div>
+    <h2 class="section-title">Organizing Committee</h2>
+    <p>The workshop is organized by an international team spanning six institutions across four countries.</p>
+    <div class="people-grid">
+
+      <div class="person-card">
+        <div class="photo-slot">
+          <img src="images/emre-ugur.jpg" alt="Emre Ugur" />
+        </div>
+        <div class="person-name">Emre Ugur</div>
+        <div class="person-affil">Bogazici University, Turkey</div>
+        <a class="person-email" href="mailto:emreugur@gmail.com">emreugur@gmail.com</a>
+      </div>
+
+      <div class="person-card">
+        <div class="photo-slot">
+          <img src="images/sara.jpeg" alt="Sara Bernardini" />
+        </div>
+        <div class="person-name">Sara Bernardini</div>
+        <div class="person-affil">University of Oxford, UK</div>
+        <a class="person-email" href="mailto:sara.bernardini@cs.ox.ac.uk">sara.bernardini@cs.ox.ac.uk</a>
+      </div>
+
+      <div class="person-card">
+        <div class="photo-slot">
+          <img src="images/riccardo.jpeg" alt="Riccardo Caccavale" />
+        </div>
+        <div class="person-name">Riccardo Caccavale</div>
+        <div class="person-affil">University of Naples Federico II, Italy</div>
+      </div>
+
+      <div class="person-card">
+        <div class="photo-slot">
+          <img src="images/Fulvio-Mastrogiovanni.webp" alt="Fulvio Mastrogiovanni" />
+        </div>
+        <div class="person-name">Fulvio Mastrogiovanni</div>
+        <div class="person-affil">University of Genoa, Italy</div>
+        <a class="person-email" href="mailto:fulvio.mastrogiovanni@unige.it">fulvio.mastrogiovanni@unige.it</a>
+      </div>
+
+      <div class="person-card">
+        <div class="photo-slot">
+          <img src="images/yukei.png" alt="Yukie Nagai" />
+        </div>
+        <div class="person-name">Yukie Nagai</div>
+        <div class="person-affil">University of Tokyo, Japan</div>
+        <a class="person-email" href="mailto:nagai.yukie@mail.u-tokyo.ac.jp">nagai.yukie@mail.u-tokyo.ac.jp</a>
+      </div>
+
+      <div class="person-card">
+        <div class="photo-slot">
+           <img src="images/Sao-Mai-Nguyen.webp" alt="Sao Mai Nguyen" />
+        </div>
+        <div class="person-name">Sao Mai Nguyen</div>
+        <div class="person-affil">ENSTA, IP Paris, France</div>
+        <a class="person-email" href="mailto:nguyensmai@gmail.com">nguyensmai@gmail.com</a>
+      </div>
+
     </div>
   </div>
 </section>
 
 <!-- FOOTER -->
 <footer>
-  <p><strong>ICDL 2026 Workshop — Neuro-Symbolic Robotics in the Age of Foundational Models</strong></p>
-  <p style="margin-top:0.5rem;">
-    Contact: <a href="mailto:emreugur@gmail.com" style="color:var(--accent-lt)">emreugur@gmail.com</a>
-  </p>
-  <p style="margin-top:0.5rem; font-size:0.78rem; color:#667799;">
-    Workshop page · All invited speakers confirmed · Schedule subject to change
-  </p>
+  <p><strong>ICDL 2026 Workshop &mdash; Neuro-Symbolic Robotics in the Age of Foundational Models</strong></p>
+  <p style="margin-top:0.5rem;">Contact: <a href="mailto:emreugur@gmail.com">emreugur@gmail.com</a></p>
+  <p style="margin-top:0.5rem;font-size:0.78rem;color:#556688;">Half-Day Workshop &nbsp;&middot;&nbsp; Schedule is tentative</p>
 </footer>
 
 </body>
