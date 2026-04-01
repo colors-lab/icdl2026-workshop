@@ -374,9 +374,8 @@
 <!-- NAV -->
 <nav>
   <ul>
-    <li><a href="#about">About</a></li>
-    <li><a href="#challenges">Challenges</a></li>
-    <li><a href="#topics">Topics</a></li>
+    <li><a href="#about">Overview</a></li>
+    <li><a href="#topics">Topics of Interest</a></li>
     <li><a href="#speakers">Speakers</a></li>
     <li><a href="#schedule">Schedule</a></li>
     <li><a href="#contribute">Contribute</a></li>
@@ -404,7 +403,7 @@
           <path fill-rule="evenodd" d="M5.216 14A2.238 2.238 0 0 1 5 13c0-1.355.68-2.75 1.936-3.72A6.325 6.325 0 0 0 5 9c-4 0-5 3-5 4s1 1 1 1h4.216z"/>
           <path d="M4.5 8a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5z"/>
         </svg>
-        5 Invited Speakers &middot; 6 Organizers
+        5 Speakers &middot; 6 Organizers
       </span>
       <span class="meta-item">
         <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" fill="currentColor" viewBox="0 0 16 16">
@@ -421,46 +420,37 @@
   <div class="inner">
     <div class="section-label">About the Workshop</div>
     <h2 class="section-title">Overview &amp; Motivation</h2>
-    <p>Over the past decade, deep learning has demonstrated remarkable effectiveness across many domains, and robotics has likewise begun to embrace deep neural models for learning sophisticated perception modules and control policies. One of the primary strengths of deep learning in robotics is its capacity to model high-dimensional policy spaces directly from raw data. However, deploying such models in real robotic systems exposes several persistent limitations that restrict their use in safety-critical applications.</p>
+    <p>Over the past decade, deep learning has demonstrated remarkable effectiveness across many domains, and robotics has likewise begun to embrace deep neural models for learning sophisticated perception modules and control policies. One of the primary strengths of deep learning in robotics is its capacity to model high-dimensional policy spaces directly from raw data. However, deploying such models in real robotic systems exposes several persistent limitations — in <strong>reasoning</strong>, <strong>explainability</strong>, <strong>modularity</strong>, and <strong>robustness</strong> — that restrict their use in safety-critical applications.</p>
     <p>In contrast, humans rely heavily on abstraction and symbolic reasoning — abilities that enable generalization, high-level cognition, and the manipulation of conceptual structures. Symbolic AI addresses these capabilities by operating over discrete symbols and logical rules, yielding transparent reasoning and natural language-level interpretability. The bottleneck, however, lies in constructing suitable symbolic representations: we still lack reliable automated procedures for generating symbols and rules that meet the demands of a given task.</p>
     <p>Neurosymbolic AI has emerged as a promising middle ground, fusing the representational power of neural networks with the compositional and interpretable nature of symbolic reasoning. Such hybrid architectures combine bottom-up perceptual strength with top-down logical inference. Interest has surged in recent years — Garcez and Lamb provide a broad survey of classical and modern approaches, and AAAI has introduced a dedicated focus track on neurosymbolic AI, reflecting the field's rapid growth.</p>
     <p>Despite this momentum, neurosymbolic methods remain relatively unexplored within robotics. Yet robotics is uniquely positioned to benefit: robots process rich, continuous sensorimotor data streams while also needing to reason abstractly, plan ahead, and act safely over long horizons. A neurosymbolic robotics framework could unify low-level perception with high-level cognition, pushing the field toward genuinely intelligent systems. This workshop seeks to explore that potential and spark debate on the most promising paths forward.</p>
-  </div>
-</section>
-
-<!-- CHALLENGES -->
-<section id="challenges" class="alt">
-  <div class="inner">
-    <div class="section-label">Motivation</div>
-    <h2 class="section-title">Why Deep Learning Alone Falls Short</h2>
-    <p>Deploying deep neural models in real robotic systems consistently exposes four fundamental challenges:</p>
     <div class="limitation-grid">
       <div class="lim-card">
         <h4>Reasoning</h4>
-        <p>Neural networks excel at pattern recognition but struggle with structured, logic-based inference. Logical reasoning requires discrete, well-defined representations — whereas neural models operate in continuous vector spaces, making explicit reasoning extremely challenging.</p>
+        <p>Neural networks excel at pattern recognition but struggle with structured, logic-based inference. Logical reasoning requires discrete, well-defined representations — whereas neural models operate in continuous vector spaces.</p>
       </div>
       <div class="lim-card">
         <h4>Explainability</h4>
-        <p>Understanding why a deep model behaves a certain way remains elusive. The absence of transparent, human-interpretable mechanisms is a critical concern for safety-critical, real-world robotic deployments.</p>
+        <p>Understanding why a deep model behaves a certain way remains elusive. The absence of transparent, human-interpretable mechanisms is a critical concern for safety-critical deployments.</p>
       </div>
       <div class="lim-card">
         <h4>Modularity</h4>
-        <p>Knowledge encoded in deep models is hard to disentangle and transfer across tasks. While transfer learning offers partial relief, systematic reuse of learned competencies remains an open problem.</p>
+        <p>Knowledge encoded in deep models is hard to disentangle and transfer across tasks. Systematic reuse of learned competencies remains an open problem despite advances in transfer learning.</p>
       </div>
       <div class="lim-card">
         <h4>Robustness</h4>
-        <p>Opaque decision boundaries make it difficult to anticipate failures. Deep models remain vulnerable to adversarial perturbations and naturally occurring perceptual distortions, with no general defenses yet available.</p>
+        <p>Opaque decision boundaries make it difficult to anticipate failures. Deep models remain vulnerable to adversarial perturbations and naturally occurring perceptual distortions.</p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- DISCUSSION TOPICS -->
-<section id="topics">
+<!-- TOPICS OF INTEREST -->
+<section id="topics" class="alt">
   <div class="inner">
-    <div class="section-label">Research Agenda</div>
-    <h2 class="section-title">Discussion Topics</h2>
-    <p>The workshop will structure discussion around the following open questions, spanning representation, grounding, integration, and temporal reasoning in neuro-symbolic robotics.</p>
+    <div class="section-label">Topics of Interest</div>
+    <h2 class="section-title">Topics of Interest</h2>
+    <p>The workshop welcomes contributions and discussion around the following themes at the intersection of neural and symbolic approaches in robotics.</p>
     <ul class="topic-list">
       <li>
         <span class="topic-num">01</span>
@@ -490,12 +480,12 @@
   </div>
 </section>
 
-<!-- INVITED SPEAKERS -->
-<section id="speakers" class="alt">
+<!-- SPEAKERS -->
+<section id="speakers">
   <div class="inner">
-    <div class="section-label">Invited Speakers &amp; Panelists</div>
-    <h2 class="section-title">Invited Speakers</h2>
-    <p>The following researchers have confirmed their participation as invited speakers and panelists.</p>
+    <div class="section-label">Speakers &amp; Panelists</div>
+    <h2 class="section-title">Speakers</h2>
+    <p>The following researchers have confirmed their participation as speakers and panelists.</p>
     <div class="people-grid">
 
       <div class="person-card">
@@ -668,7 +658,7 @@
           <img src="images/yukei.png" alt="Yukie Nagai" />
         </div>
         <div class="person-name">Yukie Nagai</div>
-               <div class="person-affil">University of Tokyo, Japan</div>
+        <div class="person-affil">University of Tokyo, Japan</div>
         <a class="person-email" href="mailto:nagai.yukie@mail.u-tokyo.ac.jp">nagai.yukie@mail.u-tokyo.ac.jp</a>
       </div>
 
