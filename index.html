@@ -133,6 +133,92 @@
     p { margin-bottom: 1rem; color: var(--text-mid); }
     p:last-child { margin-bottom: 0; }
 
+
+
+    /* IMPORTANT DATES */
+    .dates-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1rem;
+      margin-top: 1.5rem;
+    }
+    .date-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-top: 3px solid var(--accent);
+      padding: 1.25rem 1.3rem;
+      border-radius: 4px;
+    }
+    .date-card .date-label {
+      font-size: 0.74rem;
+      letter-spacing: 0.09em;
+      text-transform: uppercase;
+      color: var(--text-light);
+      font-weight: 700;
+      margin-bottom: 0.3rem;
+    }
+    .date-card .date-value {
+      font-family: 'Libre Baskerville', Georgia, serif;
+      color: var(--navy);
+      font-weight: 700;
+      line-height: 1.45;
+    }
+    .notice {
+      margin-top: 1.2rem;
+      padding: 1rem 1.15rem;
+      background: #fff8e8;
+      border: 1px solid #ead4a8;
+      border-left: 4px solid var(--accent);
+      color: var(--text-mid);
+      font-size: 0.95rem;
+      line-height: 1.65;
+    }
+
+    /* KEYWORDS */
+    .keyword-list {
+      list-style: none;
+      margin-top: 1.25rem;
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 0.65rem 1rem;
+    }
+    .keyword-list li {
+      position: relative;
+      padding: 0.55rem 0 0.55rem 1.25rem;
+      color: var(--text-mid);
+      line-height: 1.45;
+      border-bottom: 1px solid rgba(221,216,204,0.75);
+    }
+    .keyword-list li::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 1.08rem;
+      width: 0.42rem;
+      height: 0.42rem;
+      border-radius: 50%;
+      background: var(--accent);
+    }
+
+
+    .submission-details {
+      margin-top: 1.3rem;
+      padding-left: 1.2rem;
+    }
+    .submission-details li {
+      margin-bottom: 0.65rem;
+      color: var(--text-mid);
+    }
+
+    .special-issue {
+      margin-top: 1.3rem;
+      padding: 1.2rem 1.35rem;
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-left: 4px solid var(--accent);
+      border-radius: 3px;
+    }
+
     /* LIMITATION CARDS */
     .limitation-grid {
       display: grid;
@@ -192,10 +278,6 @@
       gap: 1.8rem;
       margin-top: 1.4rem;
       justify-items: center;
-    }
-    /* Center lone last card (e.g. 5 speakers: row of 3 + row with 2 centered) */
-    .people-grid .person-card:last-child:nth-child(3n + 2) {
-      grid-column: 2;
     }
     .person-card {
       background: var(--bg-card);
@@ -354,15 +436,57 @@
     footer a { color: var(--accent-lt); text-decoration: none; }
     footer a:hover { text-decoration: underline; }
 
+
+
+    /* FORCE NO HOVER EFFECT FOR KEYWORDS */
+    .keyword-list li,
+    .keyword-list li:hover,
+    .keyword-list li:focus,
+    .keyword-list li:active {
+      background: transparent !important;
+      border-left: none !important;
+      box-shadow: none !important;
+      transform: none !important;
+      padding-left: 1.25rem !important;
+      color: var(--text-mid) !important;
+    }
+
+    .keyword-list li::before,
+    .keyword-list li:hover::before,
+    .keyword-list li:focus::before,
+    .keyword-list li:active::before {
+      content: '' !important;
+      position: absolute !important;
+      left: 0 !important;
+      top: 1.08rem !important;
+      width: 0.42rem !important;
+      height: 0.42rem !important;
+      border-radius: 50% !important;
+      background: var(--accent) !important;
+      border: none !important;
+      opacity: 1 !important;
+      box-shadow: none !important;
+      transform: none !important;
+    }
+
+    .keyword-list li::after,
+    .keyword-list li:hover::after,
+    .keyword-list li:focus::after,
+    .keyword-list li:active::after {
+      content: none !important;
+      display: none !important;
+    }
+
     /* RESPONSIVE */
     @media (max-width: 700px) {
       nav ul li a { padding: 0.65rem 0.8rem; font-size: 0.73rem; }
       header { padding: 3.5rem 1.25rem 3rem; }
       section { padding: 3rem 1.25rem; }
       .people-grid { grid-template-columns: repeat(2, 1fr); }
-      .people-grid .person-card:last-child:nth-child(3n + 2) { grid-column: auto; }
       .schedule-table td.time { width: auto; white-space: normal; }
       .cfc-box { padding: 1.8rem 1.5rem; }
+      .dates-grid { grid-template-columns: 1fr; }
+      .keyword-list { grid-template-columns: 1fr; }
     }
     @media (max-width: 420px) {
       .people-grid { grid-template-columns: 1fr; }
@@ -374,11 +498,12 @@
 <!-- NAV -->
 <nav>
   <ul>
-    <li><a href="#about">Overview</a></li>
-    <li><a href="#topics">Topics of Interest</a></li>
+    <li><a href="#dates">Important Dates</a></li>
+    <li><a href="#objectives">Objectives</a></li>
+    <li><a href="#keywords">Keywords</a></li>
     <li><a href="#speakers">Speakers</a></li>
+    <li><a href="#contribute">Call for Contributions</a></li>
     <li><a href="#schedule">Schedule</a></li>
-    <li><a href="#contribute">Contribute</a></li>
     <li><a href="#organizers">Organizers</a></li>
   </ul>
 </nav>
@@ -388,7 +513,6 @@
   <div class="hero-inner">
     <div class="conference-tag">ICDL 2026 &middot; Half-Day Workshop</div>
     <h1>Neuro-Symbolic Robotics<br>in the Age of Foundational Models</h1>
-    <p class="subtitle">Fusing neural perception with symbolic reasoning toward genuinely intelligent robotic systems</p>
     <div class="meta-row">
       <span class="meta-item">
         <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" fill="currentColor" viewBox="0 0 16 16">
@@ -399,83 +523,79 @@
       </span>
       <span class="meta-item">
         <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" fill="currentColor" viewBox="0 0 16 16">
-          <path d="M7 14s-1 0-1-1 1-4 5-4 5 3 5 4-1 1-1 1H7zm4-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/>
-          <path fill-rule="evenodd" d="M5.216 14A2.238 2.238 0 0 1 5 13c0-1.355.68-2.75 1.936-3.72A6.325 6.325 0 0 0 5 9c-4 0-5 3-5 4s1 1 1 1h4.216z"/>
-          <path d="M4.5 8a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5z"/>
-        </svg>
-        5 Speakers &middot; 6 Organizers
-      </span>
-      <span class="meta-item">
-        <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" fill="currentColor" viewBox="0 0 16 16">
           <path d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm7.5-6.923c-.67.204-1.335.82-1.887 1.855A7.97 7.97 0 0 0 5.145 4H7.5V1.077zM4.09 4a9.267 9.267 0 0 1 .64-1.539 6.7 6.7 0 0 1 .597-.933A7.025 7.025 0 0 0 2.255 4H4.09zm-.582 3.5c.03-.877.138-1.718.312-2.5H1.674a6.958 6.958 0 0 0-.656 2.5h2.49zM4.847 5a12.5 12.5 0 0 0-.338 2.5H7.5V5H4.847zM8.5 5v2.5h2.99a12.495 12.495 0 0 0-.337-2.5H8.5zM4.51 8.5a12.5 12.5 0 0 0 .337 2.5H7.5V8.5H4.51zm3.99 0V11h2.653c.187-.765.306-1.608.338-2.5H8.5zM5.145 12c.138.386.295.744.468 1.068.552 1.035 1.218 1.65 1.887 1.855V12H5.145zm.182 2.472a6.696 6.696 0 0 1-.597-.933A9.268 9.268 0 0 1 4.09 12H2.255a7.024 7.024 0 0 0 3.072 2.472zM3.82 11a13.652 13.652 0 0 1-.312-2.5h-2.49c.062.89.291 1.733.656 2.5H3.82zm6.853 3.472A7.024 7.024 0 0 0 13.745 12H11.91a9.27 9.27 0 0 1-.64 1.539 6.688 6.688 0 0 1-.597.933zM8.5 12v2.923c.67-.204 1.335-.82 1.887-1.855.173-.324.33-.682.468-1.068H8.5zm3.68-1h2.146c.365-.767.594-1.61.656-2.5h-2.49a13.65 13.65 0 0 1-.312 2.5zm2.802-3.5a6.959 6.959 0 0 0-.656-2.5H12.18c.174.782.282 1.623.312 2.5h2.49z"/>
         </svg>
         International &middot; Multi-Continent
+      </span>
+      <span class="meta-item">
+        <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" fill="currentColor" viewBox="0 0 16 16" aria-hidden="true">
+          <path d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5zM1 4v10a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V4H1z"/>
+        </svg>
+        September 15, 2026 · 09:30–12:50
       </span>
     </div>
   </div>
 </header>
 
-<!-- ABOUT -->
-<section id="about">
+<!-- IMPORTANT DATES -->
+<section id="dates" class="alt">
   <div class="inner">
-    <div class="section-label">About the Workshop</div>
-    <h2 class="section-title">Overview &amp; Motivation</h2>
-    <p>Over the past decade, deep learning has demonstrated remarkable effectiveness across many domains, and robotics has likewise begun to embrace deep neural models for learning sophisticated perception modules and control policies. One of the primary strengths of deep learning in robotics is its capacity to model high-dimensional policy spaces directly from raw data. However, deploying such models in real robotic systems exposes several persistent limitations — in <strong>reasoning</strong>, <strong>explainability</strong>, <strong>modularity</strong>, and <strong>robustness</strong> — that restrict their use in safety-critical applications.</p>
-    <p>In contrast, humans rely heavily on abstraction and symbolic reasoning — abilities that enable generalization, high-level cognition, and the manipulation of conceptual structures. Symbolic AI addresses these capabilities by operating over discrete symbols and logical rules, yielding transparent reasoning and natural language-level interpretability. The bottleneck, however, lies in constructing suitable symbolic representations: we still lack reliable automated procedures for generating symbols and rules that meet the demands of a given task.</p>
-    <p>Neurosymbolic AI has emerged as a promising middle ground, fusing the representational power of neural networks with the compositional and interpretable nature of symbolic reasoning. Such hybrid architectures combine bottom-up perceptual strength with top-down logical inference. Interest has surged in recent years — Garcez and Lamb provide a broad survey of classical and modern approaches, and AAAI has introduced a dedicated focus track on neurosymbolic AI, reflecting the field's rapid growth.</p>
-    <p>Despite this momentum, neurosymbolic methods remain relatively unexplored within robotics. Yet robotics is uniquely positioned to benefit: robots process rich, continuous sensorimotor data streams while also needing to reason abstractly, plan ahead, and act safely over long horizons. A neurosymbolic robotics framework could unify low-level perception with high-level cognition, pushing the field toward genuinely intelligent systems. This workshop seeks to explore that potential and spark debate on the most promising paths forward.</p>
-    <div class="limitation-grid">
-      <div class="lim-card">
-        <h4>Reasoning</h4>
-        <p>Neural networks excel at pattern recognition but struggle with structured, logic-based inference. Logical reasoning requires discrete, well-defined representations — whereas neural models operate in continuous vector spaces.</p>
+    <div class="section-label">Important Dates</div>
+    <h2 class="section-title">Important Dates</h2>
+    <div class="dates-grid">
+      <div class="date-card">
+        <div class="date-label">Paper Submission Deadline</div>
+        <div class="date-value">August 5, 2026</div>
       </div>
-      <div class="lim-card">
-        <h4>Explainability</h4>
-        <p>Understanding why a deep model behaves a certain way remains elusive. The absence of transparent, human-interpretable mechanisms is a critical concern for safety-critical deployments.</p>
+      <div class="date-card">
+        <div class="date-label">Notification of Acceptance</div>
+        <div class="date-value">August 12, 2026</div>
       </div>
-      <div class="lim-card">
-        <h4>Modularity</h4>
-        <p>Knowledge encoded in deep models is hard to disentangle and transfer across tasks. Systematic reuse of learned competencies remains an open problem despite advances in transfer learning.</p>
-      </div>
-      <div class="lim-card">
-        <h4>Robustness</h4>
-        <p>Opaque decision boundaries make it difficult to anticipate failures. Deep models remain vulnerable to adversarial perturbations and naturally occurring perceptual distortions.</p>
+      <div class="date-card">
+        <div class="date-label">Workshop Day</div>
+        <div class="date-value">September 15, 2026<br />09:30–12:50</div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- TOPICS OF INTEREST -->
-<section id="topics" class="alt">
+<!-- OBJECTIVES -->
+<section id="objectives">
   <div class="inner">
-    <div class="section-label">Topics of Interest</div>
-    <h2 class="section-title">Topics of Interest</h2>
-    <p>The workshop welcomes contributions and discussion around the following themes at the intersection of neural and symbolic approaches in robotics.</p>
-    <ul class="topic-list">
-      <li>
-        <span class="topic-num">01</span>
-        <span><strong>Symbolic knowledge representation:</strong> How are — or how should — symbols be represented within neural networks? Distributed across subnetwork activations, or localized to individual neurons?</span>
-      </li>
-      <li>
-        <span class="topic-num">02</span>
-        <span><strong>Designing networks to generate symbols and rules:</strong> What principles should guide this engineering effort, and can such approaches scale to real-world complexity?</span>
-      </li>
-      <li>
-        <span class="topic-num">03</span>
-        <span><strong>Symbol grounding:</strong> Should symbols emerge organically from a robot's interactions with its environment, rather than being imposed top-down?</span>
-      </li>
-      <li>
-        <span class="topic-num">04</span>
-        <span>How scalable is it to pre-design symbols and rules, and subsequently learn their grounding through deep networks?</span>
-      </li>
-      <li>
-        <span class="topic-num">05</span>
-        <span><strong>Integrating cognitive capabilities:</strong> How can reasoning, planning, communication, and language — which depend on symbolic manipulation — be unified with perception and control systems that operate on high-dimensional continuous data?</span>
-      </li>
-      <li>
-        <span class="topic-num">06</span>
-        <span><strong>Symbolic representations of time:</strong> How should temporal structure be handled in long-horizon tasks, curriculum learning pipelines, or developmental robotic systems?</span>
-      </li>
+    <div class="section-label">About the Workshop</div>
+    <h2 class="section-title">Objectives</h2>
+    <p>Neurosymbolic, or neural-symbolic, AI has emerged as a promising research direction, aiming to fuse the representational power of neural networks with the compositional and interpretable nature of symbolic reasoning. Such hybrid architectures promise bottom-up perceptual strength combined with top-down logical inference. Although the idea is not new, interest in neurosymbolic methods has surged recently. The renewed momentum stems partly from our improved understanding of neural architectures and the recognition that integrating symbolic reasoning may address some of the fundamental limitations of current deep-learning paradigms. Despite this momentum, neurosymbolic methods remain relatively unexplored within robotics. Yet robotics is uniquely positioned to benefit from such integration: robots process rich, continuous sensorimotor data streams but must also reason abstractly to plan, act safely, and achieve long-term goals. A neurosymbolic robotics framework could therefore unify low-level perception with high-level cognition, pushing the field closer to genuinely intelligent robotic systems.</p>
+    <p>This workshop seeks to highlight neurosymbolic approaches, explore their potential for cognitive robotics, and foster discussion on promising research directions. The organizers give special emphasis on developmental and bottom-up approaches, especially symbol emergence and rule learning from experience. We aim to spark debate on the feasibility and transformative potential of bringing recent neurosymbolic approaches into developmental robotics. Additionally, we would like to discuss current neuro-symbolic approaches in relation to foundational models, especially Visual Language Models and Visual Language Action Models, which we expect to offer new perspectives to the ICDL community.</p>
+  </div>
+</section>
+
+<!-- KEYWORDS -->
+<section id="keywords" class="alt">
+  <div class="inner">
+    <div class="section-label">Keywords</div>
+    <h2 class="section-title">Keywords</h2>
+    <p>We welcome submissions on related topics, including but not limited to the following:</p>
+    <ul class="keyword-list">
+      <li>Neuro-symbolic AI and robotics</li>
+      <li>Learning for Planning</li>
+      <li>Planning for Learning</li>
+      <li>Category, concept, and predicate learning in robotic systems</li>
+      <li>Symbol formation, symbol grounding, and symbol emergence</li>
+      <li>Learning discrete skills, action primitives, and motor primitives</li>
+      <li>Skill discovery, skill segmentation, and option learning</li>
+      <li>Rule learning, operator learning, and action model acquisition</li>
+      <li>Learning symbolic and neuro-symbolic representations for planning</li>
+      <li>Learning STRIPS, PDDL, and relational transition models</li>
+      <li>State, action, skill, and relational abstraction</li>
+      <li>Hierarchical reinforcement learning and temporal abstraction</li>
+      <li>Neuro-symbolic skill learning and bilevel planning</li>
+      <li>Task and motion planning with learned symbolic models</li>
+      <li>Learning abstract, discrete, object-centric, or relational world models</li>
+      <li>Affordance learning and object-action-effect representations</li>
+      <li>Self-supervised, curiosity-driven, and developmental robot learning</li>
+      <li>Learning from demonstration for symbolic planning and skill acquisition</li>
+      <li>Grounded language, signs, and semiotic communication in robots</li>
+      <li>Embodied concept formation and developmental cognitive robotics</li>
     </ul>
   </div>
 </section>
@@ -483,9 +603,8 @@
 <!-- SPEAKERS -->
 <section id="speakers">
   <div class="inner">
-    <div class="section-label">Speakers &amp; Panelists</div>
-    <h2 class="section-title">Speakers</h2>
-    <p>The following researchers have confirmed their participation as speakers and panelists.</p>
+    <div class="section-label">Invited Speakers</div>
+    <h2 class="section-title">Invited Speakers <span style="font-family:'Source Sans 3',sans-serif;font-size:0.82rem;font-weight:400;font-style:italic;color:var(--text-light);margin-left:0.5rem;">confirmed</span></h2>
     <div class="people-grid">
 
       <div class="person-card">
@@ -532,9 +651,57 @@
         <a class="person-email" href="mailto:fulvio.mastrogiovanni@unige.it">fulvio.mastrogiovanni@unige.it</a>
       </div>
 
+      <div class="person-card">
+        <div class="photo-slot">
+          <img src="images/tadahiro-taniguchi.webp" alt="Tadahiro Taniguchi" />
+        </div>
+        <div class="person-name">Tadahiro Taniguchi</div>
+        <div class="person-affil">Kyoto University, Japan</div>
+        <a class="person-email" href="mailto:taniguchi@i.kyoto-u.ac.jp">taniguchi@i.kyoto-u.ac.jp</a>
+      </div>
     </div>
   </div>
 </section>
+
+<!-- CALL FOR CONTRIBUTIONS -->
+<section id="contribute" class="alt">
+  <div class="inner">
+    <div class="section-label">Call for Contributions and Participation</div>
+    <h2 class="section-title">Call for Contributions</h2>
+
+    <p>
+      We encourage researchers to submit <strong>1-2 page extended abstracts or a preprint</strong> of relevant work.
+      There is no page limitation for the preprint. Accepted abstracts will be posted on the workshop website,
+      given the authors’ consent, and will not appear in the official IEEE proceedings. The review process is
+      single-blind and will be conducted by the workshop organizers.
+    </p>
+
+    <p>
+      We also encourage researchers to submit their <strong>novel full-paper contributions</strong>. Accepted papers
+      will be posted on the workshop website, given the authors’ consent, and will not appear in the official
+      IEEE proceedings. They might also be presented as a short talk.
+    </p>
+
+    <p>
+      Please submit your contribution to
+      <a href="mailto:emre.ugur@bogazici.edu.tr">emre.ugur@bogazici.edu.tr</a>
+      with the subject line: <strong>ICDL WS contribution submission</strong>
+    </p>
+
+    <p>
+      Accepted contributions will have the opportunity to present their work/ideas in a poster session.
+      Additionally, a few select submissions will have the chance to give a short talk, while others will
+      give a flash talk.
+    </p>
+
+    <div class="notice">
+      Please note that earlier submissions will be evaluated as soon as possible, within one week,
+      to give potential participants time to plan their trip.
+    </div>
+  </div>
+</section>
+
+
 
 <!-- SCHEDULE -->
 <section id="schedule">
@@ -550,68 +717,50 @@
       </thead>
       <tbody>
         <tr>
-          <td class="time">08:30 &ndash; 08:45</td>
-          <td>Welcome speech by the organizing committee <span class="tag welcome">Welcome</span></td>
+          <td class="time">09:30 &ndash; 09:40</td>
+          <td>Welcome and introduction by the organizing committee <span class="tag welcome">Welcome</span></td>
         </tr>
         <tr>
-          <td class="time">08:45 &ndash; 09:30</td>
-          <td>Invited Speaker 1 <span class="tag invited">Invited</span></td>
+          <td class="time">09:40 &ndash; 10:10</td>
+          <td>Invited Talk 1 <span class="tag invited">Invited</span></td>
         </tr>
         <tr>
-          <td class="time">09:30 &ndash; 10:15</td>
-          <td>Invited Speaker 2 <span class="tag invited">Invited</span></td>
+          <td class="time">10:10 &ndash; 10:40</td>
+          <td>Invited Talk 2 <span class="tag invited">Invited</span></td>
         </tr>
         <tr>
-          <td class="time">10:15 &ndash; 11:00</td>
-          <td>Invited Speaker 3 <span class="tag invited">Invited</span></td>
+          <td class="time">10:40 &ndash; 11:00</td>
+          <td>Contributed flash talks <span class="tag contributed">Contributed</span></td>
         </tr>
         <tr>
-          <td class="time">11:00 &ndash; 11:15</td>
-          <td>Coffee Break &amp; Poster Session <span class="tag break">Break</span></td>
+          <td class="time">11:00 &ndash; 11:20</td>
+          <td>Coffee break and poster session <span class="tag break">Break</span></td>
         </tr>
         <tr>
-          <td class="time">11:15 &ndash; 11:45</td>
-          <td>Invited Speaker 4 <span class="tag invited">Invited</span></td>
+          <td class="time">11:20 &ndash; 11:50</td>
+          <td>Invited Talk 3 <span class="tag invited">Invited</span></td>
         </tr>
         <tr>
-          <td class="time">11:45 &ndash; 12:00</td>
-          <td>Contributed Oral Talks <span class="tag contributed">Contributed</span></td>
+          <td class="time">11:50 &ndash; 12:20</td>
+          <td>Invited Talk 4 <span class="tag invited">Invited</span></td>
         </tr>
         <tr>
-          <td class="time">12:00 &ndash; 12:45</td>
-          <td>Invited Speaker 5 <span class="tag invited">Invited</span></td>
+          <td class="time">12:20 &ndash; 12:45</td>
+          <td>Invited Talk 5 / Panel discussion <span class="tag invited">Invited</span></td>
         </tr>
         <tr>
-          <td class="time">12:45 &ndash; 13:00</td>
-          <td>Farewell &amp; Closing Remarks <span class="tag farewell">Closing</span></td>
+          <td class="time">12:45 &ndash; 12:50</td>
+          <td>Farewell and closing remarks <span class="tag farewell">Closing</span></td>
         </tr>
       </tbody>
     </table>
   </div>
 </section>
 
-<!-- CALL FOR CONTRIBUTIONS -->
-<section id="contribute" class="alt">
-  <div class="inner">
-    <div class="section-label">Call for Contributions</div>
-    <h2 class="section-title">Submit Your Work</h2>
-    <p>We invite submissions from researchers working at the intersection of neural and symbolic approaches in robotics and AI. Accepted contributions will be presented as oral talks (5&ndash;15 minutes) and/or posters, depending on quality assessed by reviewers.</p>
-    <div class="cfc-box">
-      <h3>Who Should Attend &amp; Submit?</h3>
-      <p>We aim to draw a diverse, interdisciplinary audience. We strongly encourage submissions from <strong>underrepresented researchers and communities</strong>, and the review process will consider gender, race, ethnicity, and geographic balance.</p>
-      <ul>
-        <li>Cognitive and developmental roboticists working on symbol grounding and emergence</li>
-        <li>Robotics researchers working on symbolic AI who wish to incorporate recent deep learning advances</li>
-        <li>Robotics researchers working on deep learning who want to leverage symbolic reasoning and explainability</li>
-        <li>Researchers in vision and NLP working at the neural&ndash;symbolic intersection</li>
-      </ul>
-      <p>The organizing team spans multiple continents and institutions specifically to ensure diversity of reach &mdash; we welcome participants who do not traditionally attend ICDL.</p>
-    </div>
-  </div>
-</section>
+
 
 <!-- ORGANIZERS -->
-<section id="organizers">
+<section id="organizers" class="alt">
   <div class="inner">
     <div class="section-label">Organization</div>
     <h2 class="section-title">Organizing Committee</h2>
@@ -624,7 +773,7 @@
         </div>
         <div class="person-name">Emre Ugur</div>
         <div class="person-affil">Bogazici University, Turkey</div>
-        <a class="person-email" href="mailto:emreugur@gmail.com">emreugur@gmail.com</a>
+        <a class="person-email" href="mailto:emre.ugur@bogazici.edu.tr">emre.ugur@bogazici.edu.tr</a>
       </div>
 
       <div class="person-card">
@@ -635,13 +784,14 @@
         <div class="person-affil">University of Oxford, UK</div>
         <a class="person-email" href="mailto:sara.bernardini@cs.ox.ac.uk">sara.bernardini@cs.ox.ac.uk</a>
       </div>
-
+      
       <div class="person-card">
         <div class="photo-slot">
           <img src="images/riccardo.jpeg" alt="Riccardo Caccavale" />
         </div>
         <div class="person-name">Riccardo Caccavale</div>
         <div class="person-affil">University of Naples Federico II, Italy</div>
+        <a class="person-email" href="mailto:riccardo.caccavale@unina.it">riccardo.caccavale@unina.it</a>
       </div>
 
       <div class="person-card">
@@ -678,7 +828,7 @@
 <!-- FOOTER -->
 <footer>
   <p><strong>ICDL 2026 Workshop &mdash; Neuro-Symbolic Robotics in the Age of Foundational Models</strong></p>
-  <p style="margin-top:0.5rem;">Contact: <a href="mailto:emreugur@gmail.com">emreugur@gmail.com</a></p>
+  <p style="margin-top:0.5rem;">Contact: <a href="mailto:emre.ugur@bogazici.edu.tr">emre.ugur@bogazici.edu.tr</a></p>
   <p style="margin-top:0.5rem;font-size:0.78rem;color:#556688;">Half-Day Workshop &nbsp;&middot;&nbsp; Schedule is tentative</p>
 </footer>
 
