@@ -404,6 +404,22 @@
     .tag.break       { background: #6b7fa3; color: #e8f0ff; }
     .tag.farewell    { background: #4a4a4a; color: #e0e0e0; }
 
+    /* POSTERS */
+    .poster-list {
+      list-style: none;
+      margin-top: 1rem;
+    }
+    .poster-list li {
+      padding: 0.85rem 0;
+      border-bottom: 1px solid var(--border);
+      font-size: 0.93rem;
+      color: var(--text-mid);
+      line-height: 1.6;
+    }
+    .poster-list li:last-child { border-bottom: none; }
+    .poster-list .poster-title { font-weight: 700; color: var(--navy); }
+    .poster-list .poster-authors { color: var(--text-mid); }
+
     /* CALL FOR CONTRIBUTIONS */
     .cfc-box {
       background: var(--navy);
@@ -540,6 +556,7 @@
     <li><a href="#speakers">Speakers</a></li>
     <li><a href="#contribute">Call for Contributions</a></li>
     <li><a href="#schedule">Schedule</a></li>
+    <li><a href="#posters">Posters</a></li>
     <li><a href="#organizers">Organizers</a></li>
   </ul>
 </nav>
@@ -654,16 +671,6 @@
 
       <div class="person-card">
         <div class="photo-slot">
-          <img src="images/tom-silver.jpg" alt="Tom Silver" />
-        </div>
-        <div class="person-name">Tom Silver</div>
-        <div class="person-affil">Princeton University, USA</div>
-        <a class="person-email" href="mailto:tsilver@princeton.edu">tsilver@princeton.edu</a>
-      </div>
-      
-
-      <div class="person-card">
-        <div class="photo-slot">
           <img src="images/Finzi.jpg" alt="Alberto Finzi" />
         </div>
         <div class="person-name">Alberto Finzi</div>
@@ -756,39 +763,47 @@
       <tbody>
         <tr>
           <td class="time">09:30 &ndash; 09:40</td>
-          <td>Welcome and introduction by the organizing committee <span class="tag welcome">Welcome</span></td>
+          <td><strong>Welcome and Introduction</strong> by the workshop organizers</td>
         </tr>
         <tr>
-          <td class="time">09:40 &ndash; 10:10</td>
-          <td>Invited Talk 1 <span class="tag invited">Invited</span></td>
+          <td class="time">09:40 &ndash; 10:00</td>
+          <td><strong>Invited Talk:</strong> Erhan Oztop</td>
         </tr>
         <tr>
-          <td class="time">10:10 &ndash; 10:40</td>
-          <td>Invited Talk 2 <span class="tag invited">Invited</span></td>
+          <td class="time">10:00 &ndash; 10:20</td>
+          <td><strong>Invited Talk:</strong> Kento Kawaharazuka</td>
         </tr>
         <tr>
-          <td class="time">10:40 &ndash; 11:00</td>
-          <td>Contributed flash talks <span class="tag contributed">Contributed</span></td>
+          <td class="time">10:20 &ndash; 10:28</td>
+          <td><strong>Contributed Talk 1:</strong> Ana Davila, Jacinto Colan, Yasuhisa Hasegawa, <em>Learning Task Relevant Predicates for Grounded Robot Instructions</em></td>
         </tr>
         <tr>
-          <td class="time">11:00 &ndash; 11:20</td>
-          <td>Coffee break and poster session <span class="tag break">Break</span></td>
+          <td class="time">10:28 &ndash; 10:36</td>
+          <td><strong>Contributed Talk 2:</strong> Hinata Nago, Yuichi Yamashita, Jun Tani, <em>Hierarchical Developmental Learning of Abstract Actional Concepts with Language in a Curiosity-Driven Robot</em></td>
         </tr>
         <tr>
-          <td class="time">11:20 &ndash; 11:50</td>
-          <td>Invited Talk 3 <span class="tag invited">Invited</span></td>
+          <td class="time">10:36 &ndash; 10:40</td>
+          <td><strong>Poster Pitches</strong></td>
         </tr>
         <tr>
-          <td class="time">11:50 &ndash; 12:20</td>
-          <td>Invited Talk 4 <span class="tag invited">Invited</span></td>
+          <td class="time">10:40 &ndash; 11:20</td>
+          <td><strong>Coffee Break &amp; Poster Session</strong></td>
         </tr>
         <tr>
-          <td class="time">12:20 &ndash; 12:45</td>
-          <td>Invited Talk 5 / Panel discussion <span class="tag invited">Invited</span></td>
+          <td class="time">11:20 &ndash; 11:45</td>
+          <td><strong>Invited Talk:</strong> Tadahiro Taniguchi</td>
         </tr>
         <tr>
-          <td class="time">12:45 &ndash; 12:50</td>
-          <td>Farewell and closing remarks <span class="tag farewell">Closing</span></td>
+          <td class="time">11:45 &ndash; 12:10</td>
+          <td><strong>Invited Talk:</strong> Alberto Finzi</td>
+        </tr>
+        <tr>
+          <td class="time">12:10 &ndash; 12:35</td>
+          <td><strong>Invited Talk:</strong> Fulvio Mastrogiovanni</td>
+        </tr>
+        <tr>
+          <td class="time">12:35 &ndash; 12:50</td>
+          <td><strong>Panel Discussion &amp; Closing Remarks</strong></td>
         </tr>
       </tbody>
     </table>
@@ -797,8 +812,23 @@
 
 
 
+<!-- POSTERS -->
+<section id="posters" class="alt">
+  <div class="inner">
+    <div class="section-label">Poster Session</div>
+    <h2 class="section-title">Posters</h2>
+    <ul class="poster-list">
+      <li><span class="poster-title">Primitive Representation by a Low-Dimensional Deterministic Bias on Predictive-Coding-Inspired Variational RNN</span><br><span class="poster-authors">Takahito Fujimori, Jun Tani</span></li>
+      <li><span class="poster-title">Curiosity-Driven Development of Action and Language in Robots Through Self-Exploration</span><br><span class="poster-authors">Theodore J. Tinker, Kenji Doya, Jun Tani</span></li>
+      <li><span class="poster-title">Bidirectional Tutoring for Developmental Motor Learning in Robots: Co-Developed Interaction Dynamics Support Stable Learning</span><br><span class="poster-authors">Rui Fukushima, Jun Tani</span></li>
+    </ul>
+  </div>
+</section>
+
+
+
 <!-- ORGANIZERS -->
-<section id="organizers" class="alt">
+<section id="organizers">
   <div class="inner">
     <div class="section-label">Organization</div>
     <h2 class="section-title">Organizing Committee</h2>
